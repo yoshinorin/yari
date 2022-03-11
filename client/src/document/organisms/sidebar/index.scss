@@ -79,11 +79,10 @@
   }
 
   &-heading {
-    font: var(--type-heading-h6);
+    font: var(--type-heading-h5);
     color: var(--text-primary);
     letter-spacing: 1.5px;
-    margin: 0 0 1rem 0;
-    text-transform: uppercase;
+    margin: 0;
   }
 
   em {

@@ -95,16 +95,16 @@
   --code-color: #{$mdn-color-light-theme-blue-40};
   --mark-color: #{$mdn-color-light-theme-blue-10};
 
-  --plus-accent-color: #{$mdn-color-light-theme-red-50};
-  --html-accent-color: #{$mdn-color-light-theme-red-50};
-  --css-accent-color: #{$mdn-color-light-theme-blue-50};
-  --js-accent-color: #{$mdn-color-light-theme-yellow-50};
-  --http-accent-color: #{$mdn-color-light-theme-green-50};
-  --apis-accent-color: #{$mdn-color-light-theme-violet-50};
-  --learn-accent-color: #{$mdn-color-light-theme-pink-50};
+  --plus-accent-color: #{$mdn-color-light-theme-blue-60};
+  --html-accent-color: #{$mdn-color-light-theme-red-60};
+  --css-accent-color: #{$mdn-color-light-theme-blue-60};
+  --js-accent-color: #{$mdn-color-light-theme-yellow-60};
+  --http-accent-color: #{$mdn-color-light-theme-green-60};
+  --apis-accent-color: #{$mdn-color-light-theme-violet-60};
+  --learn-accent-color: #{$mdn-color-light-theme-pink-60};
 
-  --plus-code-color: #{$mdn-color-light-theme-red-60};
-  --html-code-color: #{$mdn-color-light-theme-red-60};
+  --plus-code-color: #{$mdn-color-light-theme-blue-60};
+  --html-code-color: #{$mdn-color-light-theme-red-70};
   --css-code-color: #{$mdn-color-light-theme-blue-60};
   --js-code-color: #{$mdn-color-light-theme-yellow-60};
   --http-code-color: #{$mdn-color-light-theme-green-60};
@@ -175,6 +175,8 @@
   --text-primary-green: #{$mdn-color-light-theme-green-60};
   --text-primary-blue: #{$mdn-color-light-theme-blue-60};
   --text-primary-yellow: #{$mdn-color-light-theme-yellow-60};
+
+  --section-separator-invert: invert(0%);
 }
 
 @mixin dark-theme {
@@ -249,8 +251,8 @@
   --apis-accent-color: #{$mdn-color-dark-theme-violet-40};
   --learn-accent-color: #{$mdn-color-dark-theme-pink-40};
 
-  --plus-code-color: #{$mdn-color-dark-theme-red-20};
-  --html-code-color: #{$mdn-color-dark-theme-red-30};
+  --plus-code-color: #{$mdn-color-dark-theme-blue-20};
+  --html-code-color: #{$mdn-color-neutral-light-70};
   --css-code-color: #{$mdn-color-dark-theme-blue-20};
   --js-code-color: #{$mdn-color-dark-theme-yellow-30};
   --http-code-color: #{$mdn-color-dark-theme-green-30};
@@ -301,6 +303,8 @@
   --text-primary-green: #{$mdn-color-dark-theme-green-30};
   --text-primary-blue: #{$mdn-color-dark-theme-blue-30};
   --text-primary-yellow: #{$mdn-color-dark-theme-yellow-30};
+
+  --section-separator-invert: invert(40%);
 }
 
 body,

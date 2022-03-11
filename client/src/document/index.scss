@@ -54,6 +54,20 @@
     }
   }
 
+  h2 {
+    &::before {
+      background: transparent url("../assets/section-separator.svg") center
+        center no-repeat;
+      content: "";
+      display: block;
+      filter: var(--section-separator-invert);
+      height: 28px;
+      margin: 2rem auto;
+      opacity: 0.2;
+      width: 520px;
+    }
+  }
+
   a:not(.button) {
     color: var(--text-link);
     width: fit-content;
@@ -64,6 +78,7 @@
 
       code {
         background-color: transparent;
+        color: white;
       }
     }
 
@@ -154,7 +169,6 @@
     dt {
       margin-top: 2rem;
       margin-bottom: 0.5rem;
-      font-weight: var(--font-body-strong-weight);
     }
 
     dd {
@@ -206,6 +220,10 @@
       .button {
         margin: 0;
         max-width: inherit;
+      }
+
+      .button-wrap {
+        color: inherit;
       }
     }
   }
@@ -329,20 +347,29 @@ iframe {
 h1 {
   font: var(--type-heading-h1);
   letter-spacing: -0.5px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   word-break: break-word;
 }
 
 h2 {
   font: var(--type-heading-h2);
   letter-spacing: 0.5px;
-  margin: 4rem 0 1rem;
+  margin: 4rem 0 0.5rem;
 }
 
 h3 {
   font: var(--type-heading-h3);
   letter-spacing: 0.5px;
-  margin: 2rem 0 1rem;
+  margin: 2rem 0 0.5rem;
+}
+
+/* When an h3 immediately follows an h2 we want to use
+ * a smaller top margin. We also make accommodation
+  for situations where there is an empty div
+  between the two elements */
+h2 ~ div ~ h3,
+h2 ~ h3 {
+  margin-top: 1rem;
 }
 
 h4 {
@@ -378,7 +405,7 @@ h6 {
 
 p {
   font: var(--type-body-l);
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
 }
 
 blockquote {
@@ -400,7 +427,6 @@ code {
 }
 
 code {
-  color: var(--text-secondary);
   background: var(--code-background-inline);
   padding: 0.125rem 0.25rem;
   width: fit-content;

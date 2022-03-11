@@ -39,11 +39,11 @@
   .spotlight-cta {
     width: fit-content;
     --button-bg: var(--text-link);
-    --button-border-color: #{$mdn-color-dark-grey-90};
+    --button-border-color: #{$mdn-color-neutral-90};
     --button-color: var(--mdn-color-black);
     --button-radius: 10rem;
     --button-padding: 1rem;
-    --button-primary-hover: #{$mdn-color-dark-grey-40};
+    --button-primary-hover: #{$mdn-color-neutral-60};
   }
 
   .wrapper {

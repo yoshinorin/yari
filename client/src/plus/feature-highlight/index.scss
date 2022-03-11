@@ -1,23 +1,24 @@
 @use "../../ui/vars" as *;
 
 .feature-highlight {
-  width: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
   padding: 2rem 1rem;
+  width: 100%;
+
+  @media screen and (min-width: $screen-md) {
+    grid-template-columns: 15rem 1fr;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    grid-template-columns: 15rem 1fr 15rem;
+  }
 
   p {
     /* MDN/Plus/Type/Body/M */
     line-height: 1.75;
   }
-
-  display: grid;
-  grid-template-columns: 1fr;
-  @media screen and (min-width: $screen-md) {
-    grid-template-columns: 15rem 1fr;
-  }
-  @media screen and (min-width: $screen-lg) {
-    grid-template-columns: 15rem 1fr 15rem;
-  }
-  gap: 2rem;
 
   .ft-sidebar {
     position: sticky;
