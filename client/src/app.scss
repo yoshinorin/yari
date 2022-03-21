@@ -21,9 +21,10 @@
   --font-heading: Inter, var(--font-fallback);
   --font-code: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
-  --font-size: 100%;
-  --heading-line-height: 1;
-  --font-line-height: 1.7;
+  --base-font-size: 100%;
+  --base-line-height: 1.2;
+  --heading-line-height: var(--base-line-height);
+  --font-line-height: 1.5;
   --font-body-strong-weight: 600;
 
   // defined in Figma here: https://www.figma.com/file/cAd46zJb6H7mW7W14iLsDe/MDN-Basic-Components?node-id=299%3A311
@@ -40,17 +41,26 @@
   --type-code-regular: 400 0.875rem/1.5 var(--font-code); /* 14px/21px */
   --type-code-inline: 400 0.875em/1.5 var(--font-code); /* 14px/21px */
 
-  /* based on the following type-scale https://type-scale.com/?size=16&scale=1.250&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false */
-  --type-heading-h1: 800 3.052rem / var(--heading-line-height)
-    var(--font-heading);
-  --type-heading-h2: 600 2.441rem / var(--heading-line-height)
-    var(--font-heading);
-  --type-heading-h3: 300 1.953rem / var(--heading-line-height)
-    var(--font-heading);
-  --type-heading-h4: 400 1.563rem / var(--heading-line-height)
-    var(--font-heading);
-  --type-heading-h5: 400 1.25rem / var(--heading-line-height)
-    var(--font-heading);
+  /* based on the following type-scale https://type-scale.com/?size=16&scale=1.250&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&
+  preview=false */
+  --type-heading-h1-font-size: 3.052rem;
+  --type-heading-h2-font-size: 2.441rem;
+  --type-heading-h3-font-size: 1.953rem;
+  --type-heading-h4-font-size: 1.563rem;
+  --type-heading-h5-font-size: 1.25rem;
+  --type-smaller-font-size: 0.8rem;
+  --type-tiny-font-size: 0.64rem;
+
+  --type-heading-h1: 800 var(--type-heading-h1-font-size) /
+    var(--heading-line-height) var(--font-heading);
+  --type-heading-h2: 600 var(--type-heading-h2-font-size) /
+    var(--heading-line-height) var(--font-heading);
+  --type-heading-h3: 300 var(--type-heading-h3-font-size) /
+    var(--heading-line-height) var(--font-heading);
+  --type-heading-h4: 400 var(--type-heading-h4-font-size) /
+    var(--heading-line-height) var(--font-heading);
+  --type-heading-h5: 400 var(--type-heading-h5-font-size) /
+    var(--heading-line-height) var(--font-heading);
   --type-heading-h6: 400 1rem / var(--heading-line-height) var(--font-heading);
   --type-article-p: 400 1rem / var(--font-line-height) var(--font-body);
 
@@ -96,6 +106,21 @@ body {
 
 main {
   min-height: 80vh;
+}
+
+.about-container,
+.main-page-content {
+  a {
+    &:link,
+    &:visited {
+      text-decoration: underline;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 .visually-hidden {
