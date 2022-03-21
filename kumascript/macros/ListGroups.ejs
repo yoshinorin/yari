@@ -94,10 +94,10 @@ for(let name of groupNames) {
 let keys = Object.keys(outputByLetter);
 
 keys.forEach(function(letter) {
-  output += `<h3 aria-label="Items starting with the letter ${letter}">${letter}</h3>
+  output += `<h3>${letter}</h3>
   <ul>${outputByLetter[letter]}</ul>`;
 });
 
-%><div class="index specifications">
+%><div class="index">
   <%-output%>
 </div>
