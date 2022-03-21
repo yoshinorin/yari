@@ -15,7 +15,7 @@
   th {
     border: 1px solid var(--border-secondary);
     border-width: 0 0 1px 1px;
-    font: var(--type-body-m);
+    font: var(--type-smaller-font-size);
     padding: 0.4rem;
 
     &[aria-expanded="false"] {
@@ -119,13 +119,15 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  font: var(--type-body-m);
+  font-size: var(--type-smaller-font-size);
 }
 
 .bc-legend-item {
+  align-items: center;
   display: flex;
   gap: 0.5rem;
 }
+
 .bc-legend-item-dt {
   display: flex;
 
@@ -291,7 +293,7 @@ dl.bc-notes-list {
 }
 
 .bc-github-link {
-  font: var(--type-body-m);
+  font: var(--type-smaller-font-size);
 }
 
 .main-page-content {
@@ -303,6 +305,7 @@ dl.bc-notes-list {
       margin-left: 0;
     }
   }
+
   .bc-supports-dd {
     margin: 0;
   }

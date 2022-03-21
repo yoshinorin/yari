@@ -21,25 +21,12 @@
   --font-heading: Inter, var(--font-fallback);
   --font-code: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
     monospace;
+
   --base-font-size: 100%;
   --base-line-height: 1.2;
   --heading-line-height: var(--base-line-height);
-  --font-line-height: 1.5;
+  --font-content-line-height: 1.75;
   --font-body-strong-weight: 600;
-
-  // defined in Figma here: https://www.figma.com/file/cAd46zJb6H7mW7W14iLsDe/MDN-Basic-Components?node-id=299%3A311
-  --type-heading-l: 500 1rem/1.1875 var(--font-heading); /* 16px/19px, h5 */
-  --type-title-l: 400 1.5rem/1.2 var(--font-heading);
-  --type-title-s: var(--font-body-strong-weight) 0.8125rem/1.2 var(--font-body);
-  --type-body-l: 400 1rem/1.75 var(--font-body); /* 16px/28px */
-  --type-body-m: 400 0.8125rem/1.23 var(--font-body); /* 13px/16px */
-  --type-body-s: 500 0.6875rem/1.273 var(--font-body); /* 11px/14px */
-  --type-emphasis-l: var(--font-body-strong-weight) 1rem/1.1875 var(--font-body); /* 16px/19px */
-  --type-emphasis-m: var(--font-body-strong-weight) 0.8125rem/1.23
-    var(--font-body); /* 13px/16px */
-  --type-label-s: 600 0.625rem/1.2 var(--font-heading); /* 10px/12px */
-  --type-code-regular: 400 0.875rem/1.5 var(--font-code); /* 14px/21px */
-  --type-code-inline: 400 0.875em/1.5 var(--font-code); /* 14px/21px */
 
   /* based on the following type-scale https://type-scale.com/?size=16&scale=1.250&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&
   preview=false */
@@ -48,8 +35,13 @@
   --type-heading-h3-font-size: 1.953rem;
   --type-heading-h4-font-size: 1.563rem;
   --type-heading-h5-font-size: 1.25rem;
+  --type-base-font-size-rem: 1rem;
   --type-smaller-font-size: 0.8rem;
   --type-tiny-font-size: 0.64rem;
+
+  --type-emphasis-m: var(--font-body-strong-weight)
+    var(--type-smaller-font-size) / 1.23 var(--font-body);
+  --type-label-s: 600 var(--type-tiny-font-size) / 1.2 var(--font-heading);
 
   --type-heading-h1: 800 var(--type-heading-h1-font-size) /
     var(--heading-line-height) var(--font-heading);
@@ -61,8 +53,10 @@
     var(--heading-line-height) var(--font-heading);
   --type-heading-h5: 400 var(--type-heading-h5-font-size) /
     var(--heading-line-height) var(--font-heading);
-  --type-heading-h6: 400 1rem / var(--heading-line-height) var(--font-heading);
-  --type-article-p: 400 1rem / var(--font-line-height) var(--font-body);
+  --type-heading-h6: 400 var(--type-base-font-size-rem) /
+    var(--heading-line-height) var(--font-heading);
+  --type-article-p: 400 var(--type-base-font-size-rem) /
+    var(--font-content-line-height) var(--font-body);
 
   /* Grid and Layout */
   --max-width: 1440px;

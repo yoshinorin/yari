@@ -3,7 +3,6 @@
 @use "../../../ui/vars" as *;
 
 .document-toc {
-  font-size: 1rem;
   margin-bottom: 2rem;
   padding: 0;
   position: relative;
@@ -21,6 +20,7 @@
 
   // double classes to override specificity from root styles
   &-list.document-toc-list {
+    font-size: var(--type-smaller-font-size);
     list-style: none;
     padding-left: 0;
 
@@ -33,7 +33,6 @@
   &-link.document-toc-link:not(.button) {
     display: block;
     padding: 0.5rem 1rem;
-    font: var(--type-body-m);
     border-left: 2px solid var(--border-secondary);
     color: var(--text-secondary);
     text-decoration: none;

@@ -1,7 +1,5 @@
 @use "sass:math";
 
-@use "~@mdn/minimalist/sass/vars/borders";
-
 @mixin set-notecard-icon($icon) {
   h3,
   h4,

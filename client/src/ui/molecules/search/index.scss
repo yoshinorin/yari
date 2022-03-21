@@ -87,7 +87,6 @@
 
     &,
     &::placeholder {
-      font: var(--type-body-l);
       text-decoration-thickness: 0.15rem;
       text-underline-offset: 0.1em;
       text-decoration-color: var(--text-link);
@@ -137,7 +136,7 @@
       padding: 0.5rem;
       word-break: break-word;
       background: var(--background-secondary);
-      font: var(--type-body-m);
+      font-size: var(--type-smaller-font-size);
 
       &:first-child {
         border-radius: var(--elem-radius) var(--elem-radius) 0 0;
