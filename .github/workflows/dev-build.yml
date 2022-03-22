@@ -58,6 +58,11 @@ jobs:
           # See matching warning for mdn/content checkout step
           fetch-depth: 0
 
+      - uses: actions/checkout@v3
+        with:
+          repository: mdn/mdn-contributor-spotlight
+          path: mdn/mdn-contributor-spotlight
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
