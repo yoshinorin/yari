@@ -312,22 +312,25 @@ iframe {
   }
 }
 
+h1,
+h2,
+h3 {
+  letter-spacing: var(--heading-letter-spacing);
+}
+
 h1 {
   font: var(--type-heading-h1);
-  letter-spacing: -0.5px;
   margin-bottom: 2rem;
   word-break: break-word;
 }
 
 h2 {
   font: var(--type-heading-h2);
-  letter-spacing: 0.5px;
   margin: 4rem 0 0.5rem;
 }
 
 h3 {
   font: var(--type-heading-h3);
-  letter-spacing: 0.015rem;
   margin: 2rem 0 0.5rem;
 }
 
