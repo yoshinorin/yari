@@ -44,7 +44,7 @@
     &[aria-current]:not([aria-current=""]):not([aria-current="false"]) {
       color: var(--text-primary);
       font-weight: 600;
-      border-left: 2px solid var(--text-link);
+      border-left: 2px solid var(--category-color);
       background-color: var(--category-color-background);
     }
   }

@@ -28,16 +28,15 @@
   --font-content-line-height: 1.75;
   --font-body-strong-weight: 600;
 
-  /* based on the following type-scale https://type-scale.com/?size=16&scale=1.250&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&
-  preview=false */
-  --type-heading-h1-font-size: 3.052rem;
-  --type-heading-h2-font-size: 2.441rem;
-  --type-heading-h3-font-size: 1.953rem;
-  --type-heading-h4-font-size: 1.563rem;
-  --type-heading-h5-font-size: 1.25rem;
+  /* based on the following type-scale https://type-scale.com/?size=16&scale=1.200&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false */
+  --type-heading-h1-font-size: 2.488rem;
+  --type-heading-h2-font-size: 2.074rem;
+  --type-heading-h3-font-size: 1.728rem;
+  --type-heading-h4-font-size: 1.44rem;
+  --type-heading-h5-font-size: 1.2rem;
   --type-base-font-size-rem: 1rem;
-  --type-smaller-font-size: 0.8rem;
-  --type-tiny-font-size: 0.64rem;
+  --type-smaller-font-size: 0.833rem;
+  --type-tiny-font-size: 0.694rem;
 
   --type-emphasis-m: var(--font-body-strong-weight)
     var(--type-smaller-font-size) / 1.23 var(--font-body);
@@ -222,50 +221,38 @@ u {
 }
 
 .category-html {
-  --text-link: var(--html-accent-color);
   --category-color: var(--html-accent-color);
   --category-color-background: var(--html-accent-background-color);
-  --code-color: var(--html-code-color);
   --mark-color: var(--html-mark-color);
 }
 
 .category-css {
-  --text-link: var(--css-accent-color);
   --category-color: var(--css-accent-color);
   --category-color-background: var(--css-accent-background-color);
-  --code-color: var(--css-code-color);
   --mark-color: var(--css-mark-color);
 }
 
 .category-javascript {
-  --text-link: var(--js-accent-color);
   --category-color: var(--js-accent-color);
   --category-color-background: var(--js-accent-background-color);
-  --code-color: var(--js-code-color);
   --mark-color: var(--js-mark-color);
 }
 
 .category-http {
-  --text-link: var(--http-accent-color);
   --category-color: var(--http-accent-color);
   --category-color-background: var(--http-accent-background-color);
-  --code-color: var(--http-code-color);
   --mark-color: var(--http-mark-color);
 }
 
 .category-api {
-  --text-link: var(--apis-accent-color);
   --category-color: var(--apis-accent-color);
   --category-color-background: var(--apis-accent-background-color);
-  --code-color: var(--apis-code-color);
   --mark-color: var(--apis-mark-color);
 }
 
 .category-learn {
-  --text-link: var(--learn-accent-color);
   --category-color: var(--learn-accent-color);
   --category-color-background: var(--learn-accent-background-color);
-  --code-color: var(--api-code-color);
   --mark-color: var(--api-mark-color);
 }
 
