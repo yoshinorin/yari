@@ -10,7 +10,7 @@ import {
   updateDeleteCollectionItem,
 } from "../common/api";
 import { showMoreButton } from "../common/plus-tabs";
-import { TabVariant, SORTS, TAB_INFO } from "../common/tabs";
+import { SORTS } from "../common/tabs";
 import SearchFilter from "../search-filter";
 import { CollectionListItem } from "./collection-list-item";
 
@@ -24,8 +24,6 @@ export function CollectionsTab({
   const [list, setList] = useState<Array<any>>([]);
   const [subscriptionLimitReached, setSubscriptionLimitReached] =
     useState(false);
-
-  document.title = TAB_INFO[TabVariant.COLLECTIONS].pageTitle || "MDN Plus";
 
   const { data, error, isLoading, hasMore } = useCollectionsApiEndpoint(
     offset,
@@ -61,8 +59,19 @@ export function CollectionsTab({
     item: BookmarkData
   ) => {
     let formData;
+
     const form = e.target as HTMLFormElement;
     formData = new FormData(form);
+
+    // Determine if delete was clicked.
+    const submitter = (e.nativeEvent as SubmitEvent)
+      .submitter as HTMLButtonElement;
+
+    let isDeleted = submitter.name === "delete" && submitter.value === "true";
+    if (submitter) {
+      formData.append(submitter.name, submitter.value);
+    }
+
     const res = await updateCollectionItem(
       item,
       new URLSearchParams([...(formData as any)]),
@@ -72,13 +81,21 @@ export function CollectionsTab({
     const limitReached =
       (await res.json())?.subscription_limit_reached || false;
     setSubscriptionLimitReached(limitReached);
-    const newList = list.map((v) => {
-      if (v.id === item.id) {
-        v.title = formData.get("name") ?? v.title;
-        v.notes = formData.get("notes") ?? v.notes;
-      }
-      return v;
-    });
+
+    let newList;
+    if (isDeleted) {
+      // Remove locally.
+      newList = list.filter((v) => v.id !== item.id);
+    } else {
+      // Update locally.
+      newList = list.map((v) => {
+        if (v.id === item.id) {
+          v.title = formData.get("name") ?? v.title;
+          v.notes = formData.get("notes") ?? v.notes;
+        }
+        return v;
+      });
+    }
     setList(newList);
   };
 
@@ -96,7 +113,7 @@ export function CollectionsTab({
     setSubscriptionLimitReached(limitReached);
 
     setToastData({
-      mainText: `${item.title} removed from your collection`,
+      mainText: "The page has been removed from your collection.",
       shortText: "Article removed",
       buttonText: "Undo",
       buttonHandler: async () => {

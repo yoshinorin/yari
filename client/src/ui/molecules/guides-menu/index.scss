@@ -6,4 +6,18 @@
     font-size: var(--type-smaller-font-size);
     font-weight: initial;
   }
+
+  .desktop-only {
+    display: none;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    .desktop-only {
+      display: inherit;
+    }
+
+    .mobile-only {
+      display: none;
+    }
+  }
 }
