@@ -43,14 +43,21 @@ function Layout({ pageType, children }) {
   React.useEffect(() => {
     setCategory(docCategory({ pathname }));
   }, [pathname]);
+
   return (
     <>
       <A11yNav />
       {!isServer && hasActiveBanners && <Banner />}
-      <div className={`page-wrapper  ${category || ""} ${pageType}`}>
-        <TopNavigation />
-        {children}
-      </div>
+      {pageType === "document-page" ? (
+        <div className={`page-wrapper  ${category || ""} ${pageType}`}>
+          {children}
+        </div>
+      ) : (
+        <div className={`page-wrapper  ${category || ""} ${pageType}`}>
+          <TopNavigation />
+          {children}
+        </div>
+      )}
       <Footer />
     </>
   );
