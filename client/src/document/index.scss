@@ -8,6 +8,16 @@
   position: sticky;
   top: 0;
   z-index: var(--z-index-top);
+
+  @media screen and (min-width: $screen-md) {
+    top: calc(var(--top-navigation-height) * -1);
+    z-index: var(--z-index-top);
+    transition: top 0.5s ease-in-out;
+
+    &:hover {
+      top: 0;
+    }
+  }
 }
 
 .main-page-content {
