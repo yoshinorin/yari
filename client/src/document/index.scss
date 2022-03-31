@@ -10,7 +10,7 @@
   z-index: var(--z-index-top);
 
   @media screen and (min-width: $screen-md) {
-    top: calc(var(--top-navigation-height) * -1);
+    top: var(--top-navigation-offset);
     transition: top 0.5s ease-in-out;
 
     &:hover {
