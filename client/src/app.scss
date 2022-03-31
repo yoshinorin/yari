@@ -196,28 +196,6 @@ u {
   text-decoration-color: var(--text-link);
 }
 
-/* Scrollbar customizations */
-::-webkit-scrollbar-track {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-
-*::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-  background-color: var(--scrollbar-bg, auto);
-}
-
-*::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  border: 2px solid var(--scrollbar-bg, auto);
-  background: var(--scrollbar-color);
-}
-
-*::-webkit-scrollbar-corner {
-  background-color: var(--scrollbar-bg, auto);
-}
-
 .plus .dark,
 .plus {
   --text-link: var(--plus-accent-color);
