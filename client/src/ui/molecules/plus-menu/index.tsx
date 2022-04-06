@@ -63,6 +63,7 @@ export const PlusMenu = ({ visibleSubMenuId, toggleMenu }) => {
       <button
         id={`${plusMenu.id}-button`}
         className="top-level-entry menu-toggle"
+        aria-controls={plusMenu.id}
         aria-haspopup="menu"
         aria-expanded={isOpen || undefined}
         onClick={() => {
@@ -76,7 +77,11 @@ export const PlusMenu = ({ visibleSubMenuId, toggleMenu }) => {
         {plusMenu.label}
       </InternalLink>
 
-      <Submenu menuEntry={plusMenu} defaultHidden={!isOpen} />
+      <Submenu
+        submenuId={plusMenu.id}
+        menuEntry={plusMenu}
+        defaultHidden={!isOpen}
+      />
     </li>
   );
 };

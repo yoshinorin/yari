@@ -70,6 +70,7 @@ export const GuidesMenu = ({ visibleSubMenuId, toggleMenu }) => {
         type="button"
         id={`${menu.id}-button`}
         className="top-level-entry menu-toggle"
+        aria-controls={menu.id}
         aria-haspopup="menu"
         aria-expanded={isOpen || undefined}
         onClick={() => {
@@ -88,7 +89,7 @@ export const GuidesMenu = ({ visibleSubMenuId, toggleMenu }) => {
         Guides
       </InternalLink>
 
-      <Submenu menuEntry={menu} defaultHidden={!isOpen} />
+      <Submenu submenuId={menu.id} menuEntry={menu} defaultHidden={!isOpen} />
     </li>
   );
 };

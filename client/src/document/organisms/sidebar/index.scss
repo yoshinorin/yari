@@ -159,10 +159,10 @@
   code {
     white-space: normal;
     word-wrap: break-word;
+    background-color: initial;
     border-radius: var(--elem-radius);
     font-family: var(--font-code);
     font-size: var(--type-smaller-font-size);
-    background: var(--code-background-inline);
     padding: 0.125rem 0.125rem;
     line-height: 1.2;
   }

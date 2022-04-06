@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { useLocale } from "../../../hooks";
 import InternalLink from "../../atoms/internal-link";
 import { Submenu } from "../submenu";
@@ -79,6 +77,7 @@ export const ReferenceMenu = ({ visibleSubMenuId, toggleMenu }) => {
         type="button"
         id={`${menu.id}-button`}
         className="top-level-entry menu-toggle"
+        aria-controls={menu.id}
         aria-haspopup="menu"
         aria-expanded={isOpen || undefined}
         onClick={() => {
@@ -97,7 +96,7 @@ export const ReferenceMenu = ({ visibleSubMenuId, toggleMenu }) => {
         {menu.label}
       </InternalLink>
 
-      <Submenu menuEntry={menu} defaultHidden={!isOpen} />
+      <Submenu submenuId={menu.id} menuEntry={menu} defaultHidden={!isOpen} />
     </li>
   );
 };

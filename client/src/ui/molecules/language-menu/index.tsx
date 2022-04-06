@@ -102,8 +102,8 @@ export function LanguageMenu({
       setIsOpen={setIsOpen}
     >
       <Button
+        id="select-language"
         type="action"
-        ariaControls={menuId}
         ariaHasPopup={"menu"}
         ariaExpanded={isOpen || undefined}
         icon="language"

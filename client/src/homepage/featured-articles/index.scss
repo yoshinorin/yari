@@ -30,9 +30,6 @@
   border-radius: 0.5rem;
   border: 1px solid var(--border-primary);
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 
   @media screen and (min-width: $screen-lg) {
     width: 33%;
@@ -43,8 +40,6 @@
   }
 
   .tile-tag {
-    color: var(--text-primary);
-
     &:hover {
       text-decoration: underline;
     }
@@ -52,16 +47,24 @@
 
   .tile-title {
     font: var(--type-heading-h5);
+    font-weight: 500;
+    line-height: var(--intermediate-line-height);
     margin: 0;
     margin-bottom: 1rem;
 
     a {
       color: var(--text-primary);
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
   }
 
   p {
     font: var(--type-smaller-font-size);
+    line-height: var(--base-line-height);
     margin: 0;
   }
 }
