@@ -5,6 +5,10 @@ import {
   asList,
   getFirst,
   hasNoteworthyNotes,
+  isFullySupportedWithoutLimitation,
+  isNotSupportedAtAll,
+  isOnlySupportedWithAltName,
+  isOnlySupportedWithPrefix,
   isTruthy,
   versionIsPreview,
 } from "./utils";
@@ -274,9 +278,9 @@ function CellIcons({ support }: { support: bcd.SupportStatement | undefined }) {
   }
   return (
     <div className="bc-icons">
-      {supportItem.prefix && <Icon name="prefix" />}
+      {isOnlySupportedWithPrefix(support) && <Icon name="prefix" />}
       {hasNoteworthyNotes(supportItem) && <Icon name="footnote" />}
-      {supportItem.alternative_name && <Icon name="altname" />}
+      {isOnlySupportedWithAltName(support) && <Icon name="altname" />}
       {supportItem.flags && <Icon name="disabled" />}
     </div>
   );
@@ -386,18 +390,13 @@ function getNotes(
           // If we encounter nothing else than the required `version_added` and
           // `release_date` properties, assume full support.
           // EDIT 1-5-21: if item.version_added doesn't exist, assume no support.
-          Object.keys(item).filter(
-            (x) => !["version_added", "release_date"].includes(x)
-          ).length === 0 &&
-          item.version_added &&
+          isFullySupportedWithoutLimitation(item) &&
           !versionIsPreview(item.version_added, browser)
             ? {
                 iconName: "footnote",
                 label: "Full support",
               }
-            : Object.keys(item).filter(
-                (x) => !["version_added", "release_date"].includes(x)
-              ).length === 0 && !item.version_added
+            : isNotSupportedAtAll(item)
             ? {
                 iconName: "footnote",
                 label: "No support",
@@ -513,7 +512,7 @@ export const FeatureRow = React.memo(
     feature: {
       name: string;
       compat: CompatStatementExtended;
-      isRoot: boolean;
+      depth: number;
     };
     browsers: bcd.BrowserNames[];
     activeCell: number | null;
@@ -526,7 +525,7 @@ export const FeatureRow = React.memo(
       throw new Error("Missing browser info");
     }
 
-    const { name, compat, isRoot } = feature;
+    const { name, compat, depth } = feature;
     const title = compat.description ? (
       <span dangerouslySetInnerHTML={{ __html: compat.description }} />
     ) : (
@@ -545,7 +544,7 @@ export const FeatureRow = React.memo(
           {compat.status && <StatusIcons status={compat.status} />}
         </div>
       );
-    } else if (compat.mdn_url && !isRoot) {
+    } else if (compat.mdn_url && depth > 0) {
       titleNode = (
         <a href={compat.mdn_url} className="bc-table-row-header">
           {title}
@@ -564,7 +563,7 @@ export const FeatureRow = React.memo(
     return (
       <>
         <tr>
-          <th className="bc-feature" scope="row">
+          <th className={`bc-feature bc-feature-depth-${depth}`} scope="row">
             {titleNode}
           </th>
           {browsers.map((browser, i) => (
