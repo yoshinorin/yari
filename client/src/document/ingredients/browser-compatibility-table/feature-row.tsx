@@ -234,28 +234,33 @@ const CellText = React.memo(
     const supportClassName = getSupportClassName(support, browser);
 
     return (
-      <>
-        <span className="icon-wrap">
-          <abbr
-            className={`
-            bc-level-${supportClassName}
-            icon
-            icon-${supportClassName}`}
-            title={title}
+      <div className="bcd-cell-text-wrapper">
+        <div className="bcd-cell-icons">
+          <span className="icon-wrap">
+            <abbr
+              className={`
+              bc-level-${supportClassName}
+              icon
+              icon-${supportClassName}`}
+              title={title}
+            >
+              <span className="bc-support-level">{title}</span>
+            </abbr>
+          </span>
+          <CellIcons support={support} />
+        </div>
+        <div className="bcd-cell-text-copy">
+          <span className="bc-browser-name">{browser.name}</span>
+          <span
+            className="bc-version-label"
+            title={
+              browserReleaseDate ? `Released ${browserReleaseDate}` : undefined
+            }
           >
-            <span className="bc-support-level">{title}</span>
-          </abbr>
-        </span>
-        <span className="bc-browser-name">{browser.name}</span>
-        <span
-          className="bc-version-label"
-          title={
-            browserReleaseDate ? `Released ${browserReleaseDate}` : undefined
-          }
-        >
-          {label}
-        </span>
-      </>
+            {label}
+          </span>
+        </div>
+      </div>
     );
   }
 );
@@ -474,7 +479,6 @@ function CompatCell({
   const content = (
     <>
       <CellText {...{ support }} browser={browserInfo} />
-      <CellIcons support={support} />
       {showNotes && (
         <dl className="bc-notes-list bc-history bc-history-mobile">{notes}</dl>
       )}

@@ -16,15 +16,19 @@
     border: 1px solid var(--border-secondary);
     border-width: 0 0 1px 1px;
     font: var(--type-smaller-font-size);
-    padding: 0.4rem;
+    padding: 0;
 
-    &[aria-expanded="false"] {
-      height: 2rem;
+    @media screen and (min-width: $screen-md) {
+      padding: 0.4rem;
     }
 
     code {
       font-size: 0.75rem !important;
     }
+  }
+
+  th {
+    padding: 0.4rem;
   }
 
   // these props allow us to add border-radius to the table.
@@ -143,7 +147,7 @@
   display: flex;
 
   .icon {
-    background-color: var(--icon-secondary);
+    background-color: var(--icon-primary);
   }
 }
 
@@ -326,3 +330,69 @@ dl.bc-notes-list {
 @import "./index-desktop";
 @import "./index-desktop-md";
 @import "./index-desktop-lg";
+
+.bcd-cell-text-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+
+  @media screen and (min-width: $screen-md) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.bcd-cell-text-copy {
+  color: var(--text-primary);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bc-supports-yes {
+  .bcd-cell-text-copy {
+    color: var(--text-primary-green);
+  }
+}
+
+.bc-supports-no {
+  .bcd-cell-text-copy {
+    color: var(--text-primary-red);
+  }
+}
+
+.bc-supports-partial {
+  .bcd-cell-text-copy {
+    color: var(--text-primary-yellow);
+  }
+}
+
+.bcd-cell-icons {
+  display: flex;
+  gap: 0.5rem;
+
+  @media screen and (min-width: $screen-md) {
+    display: block;
+  }
+}
+
+.bc-notes-wrapper {
+  .bcd-cell-text-wrapper {
+    flex-direction: row;
+    justify-content: initial;
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .bc-table {
+    .bc-support button,
+    .bcd-cell-text-wrapper {
+      height: 100%;
+    }
+
+    td.bc-support > button {
+      height: 100%;
+      padding: 0.5rem 0.25rem;
+    }
+  }
+}

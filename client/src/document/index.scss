@@ -573,8 +573,14 @@ pre {
 }
 
 a.page-not-created {
-  color: var(--icon-critical);
   cursor: not-allowed;
+
+  &:link,
+  &:hover,
+  &:focus {
+    color: var(--icon-critical);
+    text-decoration-style: wavy;
+  }
 }
 
 .badge {
