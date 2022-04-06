@@ -57,6 +57,13 @@
     }
   }
 
+  h1 {
+    @include mdn.uify();
+    &::after {
+      text-decoration-color: var(--category-color);
+    }
+  }
+
   a:not(.button) {
     color: var(--text-link);
     width: fit-content;

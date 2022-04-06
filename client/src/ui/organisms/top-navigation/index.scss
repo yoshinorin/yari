@@ -14,6 +14,10 @@
     display: flex;
     flex-flow: row wrap;
     gap: var(--gutter);
+
+    @media screen and (min-width: $screen-md) {
+      background-color: transparent;
+    }
   }
 
   &.is-transparent {

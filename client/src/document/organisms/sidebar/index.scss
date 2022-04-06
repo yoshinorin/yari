@@ -86,9 +86,12 @@
   }
 
   em {
-    display: inline-flex;
-    padding: 0.25rem;
+    background-color: var(--background-toc-active);
+    border-left: 2px solid var(--category-color);
+    display: inline-block;
     hyphens: auto;
+    padding: 0.25rem;
+    width: 100%;
   }
 
   a {
@@ -125,11 +128,10 @@
 
     ol {
       li {
-        list-style-type: "· ";
-
         .icon {
           margin-right: 0.01em;
         }
+
         &.no-bullet {
           display: block;
           font-weight: var(--font-body-strong-weight);
