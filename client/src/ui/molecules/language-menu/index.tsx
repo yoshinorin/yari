@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import { useGA } from "../../../ga-context";
@@ -102,7 +102,7 @@ export function LanguageMenu({
       setIsOpen={setIsOpen}
     >
       <Button
-        id="select-language"
+        id="languages-switcher-button"
         type="action"
         ariaHasPopup={"menu"}
         ariaExpanded={isOpen || undefined}
